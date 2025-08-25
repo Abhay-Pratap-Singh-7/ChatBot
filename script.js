@@ -5,11 +5,13 @@ const questionInput = document.getElementById('search_area');
 const chatContainer = document.getElementById('chat');
 const searchIcon = document.querySelector('.search img');
 
+const apiKey = process.env.api_key;
+
 async function displayResponse(question) {
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": "Bearer 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",
+        "Authorization": `Bearer ${api_key}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
