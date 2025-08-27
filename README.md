@@ -16,7 +16,13 @@ This project requires an API key from OpenRouter to access its models. You'll us
 4.  Give your key a descriptive name and optionally set a credit limit.
 5.  **Copy the generated key immediately\!** You will not be able to see it again after you leave the page.
 
-\!(https://your-image-hosting-link/openrouter-key-creation.png)
+![](images/1.png)
+![](images/2.png)
+![](images/3.png)
+![](images/4.png)
+![](images/5.png)
+![](images/6.png)
+
 
 -----
 
