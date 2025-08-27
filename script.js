@@ -6,12 +6,15 @@ const chatContainer = document.getElementById('chat');
 const searchIcon = document.querySelector('.search img');
 const apiButton = document.getElementById('api-btn');
 const apiInput = document.getElementById('search_area1');
+const toHide = document.getElementById('to_hide');
 let api_key = "";
 
 apiButton.addEventListener('click', () => {
     api_key = apiInput.value.trim();
     console.log("API Key set to: ", api_key);
     alert("API Key set successfully!");
+    toHide.style.display = "none";
+
 });
 
 async function displayResponse(question) {
