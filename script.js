@@ -4,10 +4,21 @@ const searchButton = document.getElementById('search-btn');
 const questionInput = document.getElementById('search_area');
 const chatContainer = document.getElementById('chat');
 const searchIcon = document.querySelector('.search img');
+const apiButton = document.getElementById('api-btn');
+const apiInput = document.getElementById('search_area1');
+let api_key = "";
 
-const apiKey = process.env.api_key;
+apiButton.addEventListener('click', () => {
+    api_key = apiInput.value.trim();
+    console.log("API Key set to: ", api_key);
+    alert("API Key set successfully!");
+});
 
 async function displayResponse(question) {
+    if ( api_key === "" ) {
+      alert("Please enter your API key");
+      return "Error: API key not provided.";
+    }
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -15,11 +26,11 @@ async function displayResponse(question) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        "model": "openai/gpt-oss-20b:free",
+        "model": "z-ai/glm-4.5-air:free",
         "messages": [
           {
             "role": "user",
-            "content": `Please provide an answer to the following question. Your response should be a single paragraph. Do not use bold font bullet points or tables. The content should be in simple words with minimal punctuation. The goal is a concise and direct explanation without any special formatting. Question: ${question}`
+            "content": `Answer the following question in plain text with no formatting no bold no special characters no tables and only minimal punctuation keep the response simple and direct Question: ${question}`
           }
         ]
       })
