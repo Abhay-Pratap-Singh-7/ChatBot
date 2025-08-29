@@ -24,20 +24,16 @@ body {
     background: #2d2d2d;
     border: 0.5px solid #6a6a6a;
     position: relative;
+    display: none;
 }
 
-.container1{
-    height: 80px;
-    width: 90%;
-    max-width: 670px;
+.api{
+    width: 50%;
+    padding: 30px;
     text-align: center;
     border-radius: 50px;
     background: #2d2d2d;
     border: 0.5px solid #6a6a6a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
 }
 
 .container h1 {
@@ -51,14 +47,42 @@ body {
     border-top: .5px solid #6a6a6a;
 }
 
-.search, .api {
+.search {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
 
-.search input{
+.api input {
+    width: 90%;
+    height: 50px;
+    background: #474747;
+    padding: 24px 35px 24px 35px;
+    border-radius: 50px;
+    border: 0.5px solid #6a6a6a;
+    outline: none;
+    font-size: 16px;
+    transform: none;
+    resize: none;
+    bottom: 15px;
+    color: #c8c8c8;
+}
+
+.api button {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    width: 50px;
+    height: 50px;
+    background: #474747;
+    border-radius: 50%;
+    border: 0.5px solid #6a6a6a;
+
+}
+   
+
+.search input {
     width: 95%;
     height: 70px;
     background: #474747;
@@ -72,26 +96,9 @@ body {
     position: absolute;
     bottom: 15px;
     color: #c8c8c8;
-    scrollbar-width: none;
-}
-.api input {
-    width: 600px;
-    height: 50px;
-    background: #474747;
-    padding: 25px;
-    border-radius: 50px;
-    border: 0.5px solid #6a6a6a;
-    outline: none;
-    font-size: 16px;
-    transform: none;
-    resize: none;
-    bottom: 15px;
-    color: #c8c8c8;
-    scrollbar-width: none;
-    margin: 10px;
 }
 
-.search img, .api img {
+.search img {
     filter: invert(1);
 }
 

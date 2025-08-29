@@ -7,24 +7,20 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="container1" id="to_hide">
-            <div class="container_api">
-                <div class="api">
-                    <input type="text" id="search_area1" placeholder="Enter your api key...">
-                    <button id="api-btn"> <img src="search-interface-symbol.png" width="25px"> </button>
-                </div>
+        <div class="api">
+            <input type="text" id="api_input" placeholder="Enter you API Key...">
+            <button id="api_set_btn"> > </button>
+        </div>
+        <div class="container">
+            <h1> CHATBOT </h1>
+            <hr>
+            <div id="chat">
+            </div>
+            <div class="search">
+                <input type="text" id="search_area" placeholder="Ask me anything...">
+                <button id="search-btn"> <img src="search-interface-symbol.png" width="25px"> </button>
             </div>
         </div>
-    <div class="container">
-        <h1> CHATBOT </h1>
-        <hr>
-        <div id="chat">
-        </div>
-        <div class="search">
-            <input type="text" id="search_area" placeholder="Ask me anything...">
-            <button id="search-btn"> <img src="search-interface-symbol.png" width="25px"> </button>
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>

@@ -1,22 +1,15 @@
-const responseContainer = document.getElementById("response");
+// created variables to access HTML elements
 const data = {};
+const container = document.querySelector('.container');
 const searchButton = document.getElementById('search-btn');
 const questionInput = document.getElementById('search_area');
 const chatContainer = document.getElementById('chat');
 const searchIcon = document.querySelector('.search img');
-const apiButton = document.getElementById('api-btn');
-const apiInput = document.getElementById('search_area1');
-const toHide = document.getElementById('to_hide');
+const apiInput = document.getElementById('api_input');
+const submitKey = document.getElementById('api_set_btn');
 let api_key = "";
 
-apiButton.addEventListener('click', () => {
-    api_key = apiInput.value.trim();
-    console.log("API Key set to: ", api_key);
-    alert("API Key set successfully!");
-    toHide.style.display = "none";
-
-});
-
+// function to fetch response from the API
 async function displayResponse(question) {
     if ( api_key === "" ) {
       alert("Please enter your API key");
@@ -45,6 +38,7 @@ async function displayResponse(question) {
     return answer;
 }
 
+// button to send message and recieve response
 searchButton.addEventListener('click', async () => {
 
   searchIcon.src = "Loading.gif";
@@ -67,20 +61,14 @@ searchButton.addEventListener('click', async () => {
 
 });
 
-searchButton.addEventListener('keyup', async (event) => {
-  if (event.key === 'Enter') {
-    const user = document.createElement('p');
-    question = questionInput.value;    
-    user.textContent = question;
-    user.classList.add('input');
-    chatContainer.appendChild(user);
-
-    const result = await displayResponse(question);
-    const output = document.createElement('p');
-    output.textContent = result;
-    output.classList.add('output');
-    chatContainer.appendChild(output);
-    chatContainer.scrollTop = chatContainer.scrollHeight;
-    questionInput.value = '';
+// diaglog box to enter API key
+submitKey.addEventListener('click', () => {
+  const inputKey = apiInput.value;
+  if (inputKey === "") {
+    alert("Please enter a valid API key");
+    return;
   }
+  api_key = inputKey;
+  document.querySelector('.api').style.display = "none";
+  container.style.display = "block";
 });
